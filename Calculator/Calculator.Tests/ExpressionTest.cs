@@ -10,6 +10,7 @@ namespace Calculator.Tests
         [TestMethod]
         public void TestMethod1()
         {
+            Expression myExpression = new Expression();
         }
     }
 }
