@@ -11,9 +11,12 @@ namespace Calculator.Tests
         [TestMethod]
         public void IsNotNull()
         {
+            //arrange
             Expression myExp = new Expression();
+            //assert
             Assert.IsNotNull(myExp);
         }
+
         [TestMethod]
         public void CanRemoveSpaces()
         {
@@ -22,6 +25,18 @@ namespace Calculator.Tests
             //act
             string expected = myExp.UserInput("2 + 3");
             string actual = "2+3";
+            //assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void CanParseOperator()
+        {
+            //arrange
+            Expression myExp = new Expression();
+            //act
+            string expected = myExp.Operator("2+3");
+            string actual = "+";
             //assert
             Assert.AreEqual(expected, actual);
         }
