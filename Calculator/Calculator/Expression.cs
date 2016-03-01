@@ -8,5 +8,12 @@ namespace Calculator
 {
     public class Expression
     {
+        public string UserInput(string equation)
+        {
+            string express = equation.Replace(" ", "");
+
+            return express;
+        }
+       
     }
 }

@@ -10,7 +10,6 @@ namespace Calculator
     {
         static void Main(string[] args)
         {
-            Console.ReadKey();
         }
     }
 }
