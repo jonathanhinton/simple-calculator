@@ -8,11 +8,18 @@ namespace Calculator
 {
     public class Expression
     {
-        public string UserInput(string equation)
+        public string ParseExpression(string equation)
         {
-            string express = equation.Replace(" ", "");
+            string expression = equation.Replace(" ", "");
+            expression.ToArray();
+            char[] operation = { '+', '-', '*', '/', '%'};
+            foreach (char element in expression)
+            {
+                expression.Split(element);
+            }
 
-            return express;
+            return expression;
+        
         }
        
     }

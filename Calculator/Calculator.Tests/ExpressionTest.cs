@@ -23,7 +23,7 @@ namespace Calculator.Tests
             //arrange
             Expression myExp = new Expression();
             //act
-            string expected = myExp.UserInput("2 + 3");
+            string expected = myExp.ParseExpression("2 + 3");
             string actual = "2+3";
             //assert
             Assert.AreEqual(expected, actual);
@@ -35,10 +35,10 @@ namespace Calculator.Tests
             //arrange
             Expression myExp = new Expression();
             //act
-            string expected = myExp.Operator("2+3");
-            string actual = "+";
+            string expected = myExp.ParseExpression("2 + 3");
+            char actual = '+';
             //assert
-            Assert.AreEqual(expected, actual);
+            Assert.AreEqual(expected[1], actual);
         }
     }
 }
