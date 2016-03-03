@@ -40,5 +40,17 @@ namespace Calculator.Tests
             //assert
             Assert.AreEqual(expected[1], actual);
         }
+        [TestMethod]
+        public void CanParseOtherOperator()
+        {
+            //arrange
+            Expression myExp = new Expression();
+            // act
+            string expected = myExp.ParseExpression("392394     * 984738");
+            string actual = "*";
+
+            //assert
+            Assert.AreEqual(expected[1], actual);
+        }
     }
 }
