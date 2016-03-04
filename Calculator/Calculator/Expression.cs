@@ -8,19 +8,26 @@ namespace Calculator
 {
     public class Expression
     {
-        public string ParseExpression(string equation)
+        public char[] operationList = new char[] { '+', '-', '*', '/', '%' };
+
+        public string RemoveSpaces(string equation)
         {
             string expression = equation.Replace(" ", "");
-            //expression.ToArray();
-            char[] operationList = new char[] { '+', '-', '*', '/', '%'};
+            return expression;
+        }
+
+        public string[] ParseExpression(string expression)
+        {
 
             int operIndex = expression.IndexOfAny(operationList);
-            
-            
+            char op = expression[operIndex];
+            string[] splitExpression = expression.Split(op);
+
+            string lhs = splitExpression[0];
+            string rhs = splitExpression[1];
 
 
-            return expression;
-        
+            return new string[] { lhs, rhs };
         }
        
     }
