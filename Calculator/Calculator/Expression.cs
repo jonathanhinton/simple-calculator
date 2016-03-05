@@ -33,7 +33,7 @@ namespace Calculator
             char op = equation[operIndex];
             string[] splitExpression = expression.Split(op);
 
-            //evaluate number of terms in array, if greater than or less than 2 throw error message
+            //evaluate number of terms in array, if greater than or less than 2 or if either index of the array contains an empty string, throw error message
             if (splitExpression.Length != 2 || splitExpression[0] == "" || splitExpression[1] == "")
             {
                 throw new InvalidOperationException("I can only do operations on 2 terms");

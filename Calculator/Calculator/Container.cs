@@ -8,10 +8,12 @@ namespace Calculator
 {
     public class Container
     {
+        //Holds the values from the ParseExpression method in the Expression class
         public int LHS { get; set; }
         public int RHS { get; set; }
         public char OP { get; set; }
 
+        //This block is not doing any of the work, first test of doing math operations using methods instead of classes. Perfectly valid though.
         public int add_me()
         {
             return LHS + RHS;
