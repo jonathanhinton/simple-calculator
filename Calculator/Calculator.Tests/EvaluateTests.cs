@@ -63,5 +63,13 @@ namespace Calculator.Tests
             Assert.AreEqual(expected, actual);
         }
 
+        [TestMethod]
+        [ExpectedException(typeof(InvalidOperationException))]
+        public void BadInput()
+        {
+            Evaluate evaluation = new Evaluate();
+            evaluation.handledIt("10");
+        }
+
     }
 }
