@@ -73,9 +73,12 @@ namespace Calculator
             stack_record.last = result;
             return result;
         }
+
+        //Create method to recall last user input
         public string LastInput(string input)
         {
             string lastCommand = "";
+            //convert string to lowercase to mitigate chance of error
             string user_command = input.ToLower();
             if (user_command == "lastq")
             {
@@ -85,9 +88,11 @@ namespace Calculator
             return lastCommand;
         }
 
+        //Create method to recall last result
         public int LastOutput(string input)
         {
             int lastResult = 0;
+            //convert string to lowercase to mitigate chance of error
             string user_command = input.ToLower();
             if (user_command == "last")
             {
