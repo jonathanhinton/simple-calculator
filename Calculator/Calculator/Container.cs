@@ -12,27 +12,27 @@ namespace Calculator
         public int RHS { get; set; }
         public char OP { get; set; }
 
-        public int add_me(int LHS, int RHS)
+        public int add_me()
         {
             return LHS + RHS;
         }
 
-        public int subtract_me(int LHS, int RHS)
+        public int subtract_me()
         {
             return LHS - RHS;
         }
 
-        public int multiply_me(int LHS, int RHS)
+        public int multiply_me()
         {
             return LHS * RHS;
         }
 
-        public int divide_me(int LHS, int RHS)
+        public int divide_me()
         {
             return LHS / RHS;
         }
 
-        public int modulo_me(int LHS, int RHS)
+        public int modulo_me()
         {
             return LHS % RHS;
         }

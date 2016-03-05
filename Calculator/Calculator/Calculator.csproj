@@ -46,6 +46,7 @@
     <Compile Include="Add.cs" />
     <Compile Include="Container.cs" />
     <Compile Include="Divide.cs" />
+    <Compile Include="Evaluate.cs" />
     <Compile Include="Expression.cs" />
     <Compile Include="Modulo.cs" />
     <Compile Include="Multiply.cs" />

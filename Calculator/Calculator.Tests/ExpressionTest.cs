@@ -68,13 +68,29 @@ namespace Calculator.Tests
         }
 
         [TestMethod]
+        [ExpectedException(typeof(InvalidOperationException))]
+        public void NoOperatorException()
+        {
+            Expression myExp = new Expression();
+            Container fullExpression = myExp.ParseExpression("2 @ 2");
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(InvalidOperationException))]
+        public void BadInputException()
+        {
+            Expression myExp = new Expression();
+            Container fullExpression = myExp.ParseExpression("23423+");
+        }
+
+        [TestMethod]
         public void CanAdd()
         {
             //arrange
             Expression myExp = new Expression();
             Container fullExpression = myExp.ParseExpression("432 + 234");
             //act
-            int expected = fullExpression.add_me(432, 234);
+            int expected = fullExpression.add_me();
             int actual = 666;
             //assert
             Assert.AreEqual(expected, actual);
@@ -87,7 +103,7 @@ namespace Calculator.Tests
             Expression myExp = new Expression();
             Container fullExpression = myExp.ParseExpression("900 - 234");
             //act
-            int expected = fullExpression.subtract_me(900, 234);
+            int expected = fullExpression.subtract_me();
             int actual = 666;
             //assert
             Assert.AreEqual(expected, actual);
@@ -100,7 +116,7 @@ namespace Calculator.Tests
             Expression myExp = new Expression();
             Container fullExpression = myExp.ParseExpression("333 * 2");
             //act
-            int expected = fullExpression.multiply_me(333, 2);
+            int expected = fullExpression.multiply_me();
             int actual = 666;
             //assert
             Assert.AreEqual(expected, actual);
@@ -113,7 +129,7 @@ namespace Calculator.Tests
             Expression myExp = new Expression();
             Container fullExpression = myExp.ParseExpression("1332 / 2");
             //act
-            int expected = fullExpression.divide_me(1332, 2);
+            int expected = fullExpression.divide_me();
             int actual = 666;
             //assert
             Assert.AreEqual(expected, actual);
@@ -126,10 +142,11 @@ namespace Calculator.Tests
             Expression myExp = new Expression();
             Container fullExpression = myExp.ParseExpression("10 % 3");
             //act
-            int expected = fullExpression.modulo_me(10, 3);
+            int expected = fullExpression.modulo_me();
             int actual = 1;
             //assert
             Assert.AreEqual(expected, actual);
         }
+
     }
 }
