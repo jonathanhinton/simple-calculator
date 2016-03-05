@@ -11,59 +11,68 @@ namespace Calculator.Tests
         [TestMethod]
         public void IsNotNull()
         {
-            //arrange
+            //Arrange
             Expression myExp = new Expression();
-            //assert
+            
+            //Assert
             Assert.IsNotNull(myExp);
         }
 
         [TestMethod]
         public void CanRemoveSpaces()
         {
-            //arrange
+            //Arrange
             Expression myExp = new Expression();
-            //act
-            string expected = myExp.RemoveSpaces("2 + 3");
-            string actual = "2+3";
-            //assert
+            
+            //Act
+            string actual = myExp.RemoveSpaces("2 + 3");
+            string expected = "2+3";
+            
+            //Assert
             Assert.AreEqual(expected, actual);
         }
 
         [TestMethod]
         public void CanParseLeftSideExpression()
         {
-            //arrange
+            //Arrange
             Expression myExp = new Expression();
             Container fullExpression = myExp.ParseExpression("2+3");
-            //act
-            int expected = fullExpression.LHS;
-            int actual = 2;
-            //assert
+            
+            //Act
+            int actual = fullExpression.LHS;
+            int expected = 2;
+            
+            //Assert
             Assert.AreEqual(expected, actual);
         }
         [TestMethod]
         public void CanParseRightSide()
         {
-            //arrange
+            //Arrange
             Expression myExp = new Expression();
             Container fullExpression = myExp.ParseExpression("392394*984738");
-            // act
-            int expected = fullExpression.RHS;
-            int actual = 984738;
+            
+            // Act
+            int actual = fullExpression.RHS;
+            int expected = 984738;
 
-            //assert
+            
+            //Assert
             Assert.AreEqual(expected, actual);
         }
         [TestMethod]
         public void CanParseOperator()
         {
-            //arrange
+            //Arrange
             Expression myExp = new Expression();
             Container fullExpression = myExp.ParseExpression("432 * 234");
-            //act
-            char expected = fullExpression.OP;
-            char actual = '*';
-            //assert
+            
+            //Act
+            char actual = fullExpression.OP;
+            char expected = '*';
+            
+            //Assert
             Assert.AreEqual(expected, actual);
         }
 
@@ -86,65 +95,75 @@ namespace Calculator.Tests
         [TestMethod]
         public void CanAdd()
         {
-            //arrange
+            //Arrange
             Expression myExp = new Expression();
             Container fullExpression = myExp.ParseExpression("432 + 234");
-            //act
-            int expected = fullExpression.add_me();
-            int actual = 666;
-            //assert
+            
+            //Act
+            int actual = fullExpression.add_me();
+            int expected = 666;
+            
+            //Assert
             Assert.AreEqual(expected, actual);
         }
 
         [TestMethod]
         public void CanSubtract()
         {
-            //arrange
+            //Arrange
             Expression myExp = new Expression();
             Container fullExpression = myExp.ParseExpression("900 - 234");
-            //act
-            int expected = fullExpression.subtract_me();
-            int actual = 666;
-            //assert
+            
+            //Act
+            int actual = fullExpression.subtract_me();
+            int expected = 666;
+            
+            //Assert
             Assert.AreEqual(expected, actual);
         }
 
         [TestMethod]
         public void CanMultiply()
         {
-            //arrange
+            //Arrange
             Expression myExp = new Expression();
             Container fullExpression = myExp.ParseExpression("333 * 2");
-            //act
-            int expected = fullExpression.multiply_me();
-            int actual = 666;
-            //assert
+            
+            //Act
+            int actual = fullExpression.multiply_me();
+            int expected = 666;
+            
+            //Assert
             Assert.AreEqual(expected, actual);
         }
 
         [TestMethod]
         public void CanDivide()
         {
-            //arrange
+            //Arrange
             Expression myExp = new Expression();
             Container fullExpression = myExp.ParseExpression("1332 / 2");
-            //act
-            int expected = fullExpression.divide_me();
-            int actual = 666;
-            //assert
+            
+            //Act
+            int actual = fullExpression.divide_me();
+            int expected = 666;
+            
+            //Assert
             Assert.AreEqual(expected, actual);
         }
 
         [TestMethod]
         public void CanModulo()
         {
-            //arrange
+            //Arrange
             Expression myExp = new Expression();
             Container fullExpression = myExp.ParseExpression("10 % 3");
-            //act
-            int expected = fullExpression.modulo_me();
-            int actual = 1;
-            //assert
+
+            //Act
+            int actual = fullExpression.modulo_me();
+            int expected = 1;
+
+            //Assert
             Assert.AreEqual(expected, actual);
         }
 
