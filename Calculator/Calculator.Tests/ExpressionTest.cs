@@ -79,5 +79,57 @@ namespace Calculator.Tests
             //assert
             Assert.AreEqual(expected, actual);
         }
+
+        [TestMethod]
+        public void CanSubtract()
+        {
+            //arrange
+            Expression myExp = new Expression();
+            Container fullExpression = myExp.ParseExpression("900 - 234");
+            //act
+            int expected = fullExpression.subtract_me(900, 234);
+            int actual = 666;
+            //assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void CanMultiply()
+        {
+            //arrange
+            Expression myExp = new Expression();
+            Container fullExpression = myExp.ParseExpression("333 * 2");
+            //act
+            int expected = fullExpression.multiply_me(333, 2);
+            int actual = 666;
+            //assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void CanDivide()
+        {
+            //arrange
+            Expression myExp = new Expression();
+            Container fullExpression = myExp.ParseExpression("1332 / 2");
+            //act
+            int expected = fullExpression.divide_me(1332, 2);
+            int actual = 666;
+            //assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void CanModulo()
+        {
+            //arrange
+            Expression myExp = new Expression();
+            Container fullExpression = myExp.ParseExpression("10 % 3");
+            //act
+            int expected = fullExpression.modulo_me(10, 3);
+            int actual = 1;
+            //assert
+            Assert.AreEqual(expected, actual);
+        }
     }
 }

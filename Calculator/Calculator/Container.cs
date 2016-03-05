@@ -16,5 +16,25 @@ namespace Calculator
         {
             return LHS + RHS;
         }
+
+        public int subtract_me(int LHS, int RHS)
+        {
+            return LHS - RHS;
+        }
+
+        public int multiply_me(int LHS, int RHS)
+        {
+            return LHS * RHS;
+        }
+
+        public int divide_me(int LHS, int RHS)
+        {
+            return LHS / RHS;
+        }
+
+        public int modulo_me(int LHS, int RHS)
+        {
+            return LHS % RHS;
+        }
     }
 }
