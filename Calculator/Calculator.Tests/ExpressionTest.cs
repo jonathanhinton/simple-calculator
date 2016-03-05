@@ -34,23 +34,37 @@ namespace Calculator.Tests
         {
             //arrange
             Expression myExp = new Expression();
+            Container fullExpression = myExp.ParseExpression("2+3");
             //act
-            string[] expected = myExp.ParseExpression("2+3");
-            string actual = "2";
+            int expected = fullExpression.LHS;
+            int actual = 2;
             //assert
-            Assert.AreEqual(expected[0], actual);
+            Assert.AreEqual(expected, actual);
         }
         [TestMethod]
         public void CanParseRightSide()
         {
             //arrange
             Expression myExp = new Expression();
+            Container fullExpression = myExp.ParseExpression("392394*984738");
             // act
-            string[] expected = myExp.ParseExpression("392394*984738");
-            string actual = "984738";
+            int expected = fullExpression.RHS;
+            int actual = 984738;
 
             //assert
-            Assert.AreEqual(expected[1], actual);
+            Assert.AreEqual(expected, actual);
+        }
+        [TestMethod]
+        public void CanParseOperator()
+        {
+            //arrange
+            Expression myExp = new Expression();
+            Container fullExpression = myExp.ParseExpression("432 * 234");
+            //act
+            char expected = fullExpression.OP;
+            char actual = '*';
+            //assert
+            Assert.AreEqual(expected, actual);
         }
     }
 }

@@ -16,18 +16,19 @@ namespace Calculator
             return expression;
         }
 
-        public string[] ParseExpression(string expression)
+        public Container ParseExpression(string expression)
         {
 
             int operIndex = expression.IndexOfAny(operationList);
             char op = expression[operIndex];
             string[] splitExpression = expression.Split(op);
 
-            string lhs = splitExpression[0];
-            string rhs = splitExpression[1];
+            Container equation = new Calculator.Container();
+            equation.LHS = Convert.ToInt32(splitExpression[0]);
+            equation.RHS = Convert.ToInt32(splitExpression[1]);
+            equation.OP = op;
 
-
-            return new string[] { lhs, rhs };
+            return equation;
         }
        
     }
