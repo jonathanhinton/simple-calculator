@@ -20,9 +20,16 @@ namespace Calculator
         {
 
             int operIndex = expression.IndexOfAny(operationList);
+            if (operIndex == -1)
+            {
+                Console.WriteLine("No valid operator detected");
+            }
             char op = expression[operIndex];
             string[] splitExpression = expression.Split(op);
-
+            if (splitExpression.Length != 2)
+            {
+                Console.WriteLine("I can only do operations on 2 terms");
+            }
             Container equation = new Calculator.Container();
             equation.LHS = Convert.ToInt32(splitExpression[0]);
             equation.RHS = Convert.ToInt32(splitExpression[1]);
