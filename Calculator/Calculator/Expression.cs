@@ -8,34 +8,37 @@ namespace Calculator
 {
     public class Expression
     {
+        //make char array of operators available to all methods
         public char[] operationList = new char[] { '+', '-', '*', '/', '%' };
 
-        public string RemoveSpaces(string equation)
+        
+        public string RemoveSpaces(string input)
         {
-            string expression = equation.Replace(" ", "");
-            return expression;
+            string spaceless = input.Replace(" ", "");
+            return spaceless;
         }
+        
 
         public Container ParseExpression(string expression)
         {
-
-            int operIndex = expression.IndexOfAny(operationList);
+            string equation = expression.Replace(" ", "");
+            int operIndex = equation.IndexOfAny(operationList);
             if (operIndex == -1)
             {
                 Console.WriteLine("No valid operator detected");
             }
-            char op = expression[operIndex];
+            char op = equation[operIndex];
             string[] splitExpression = expression.Split(op);
             if (splitExpression.Length != 2)
             {
                 Console.WriteLine("I can only do operations on 2 terms");
             }
-            Container equation = new Calculator.Container();
-            equation.LHS = Convert.ToInt32(splitExpression[0]);
-            equation.RHS = Convert.ToInt32(splitExpression[1]);
-            equation.OP = op;
+            Container parsed_equation = new Calculator.Container();
+            parsed_equation.LHS = Convert.ToInt32(splitExpression[0]);
+            parsed_equation.RHS = Convert.ToInt32(splitExpression[1]);
+            parsed_equation.OP = op;
 
-            return equation;
+            return parsed_equation;
         }
        
     }
