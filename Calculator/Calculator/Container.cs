@@ -11,5 +11,10 @@ namespace Calculator
         public int LHS { get; set; }
         public int RHS { get; set; }
         public char OP { get; set; }
+
+        public int add_me(int LHS, int RHS)
+        {
+            return LHS + RHS;
+        }
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Calculator
 {
-    class Moldulo
+    class Modulo
     {
         public int equation(int lhs, int rhs)
         {

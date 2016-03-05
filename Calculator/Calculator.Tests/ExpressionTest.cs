@@ -66,5 +66,18 @@ namespace Calculator.Tests
             //assert
             Assert.AreEqual(expected, actual);
         }
+
+        [TestMethod]
+        public void CanAdd()
+        {
+            //arrange
+            Expression myExp = new Expression();
+            Container fullExpression = myExp.ParseExpression("432 + 234");
+            //act
+            int expected = fullExpression.add_me(432, 234);
+            int actual = 666;
+            //assert
+            Assert.AreEqual(expected, actual);
+        }
     }
 }

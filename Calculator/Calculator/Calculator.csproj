@@ -47,7 +47,7 @@
     <Compile Include="Container.cs" />
     <Compile Include="Divide.cs" />
     <Compile Include="Expression.cs" />
-    <Compile Include="Moldulo.cs" />
+    <Compile Include="Modulo.cs" />
     <Compile Include="Multiply.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
