@@ -8,7 +8,7 @@ namespace Calculator
 {
     public class Add
     {
-        public int equation(int lhs, int rhs)
+        public int addIt(int lhs, int rhs)
         {
             return lhs + rhs;
         }

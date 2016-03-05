@@ -8,7 +8,7 @@ namespace Calculator
 {
     class Divide
     {
-        public int equation(int lhs, int rhs)
+        public int divideIt(int lhs, int rhs)
         {
             return lhs / rhs;
         }

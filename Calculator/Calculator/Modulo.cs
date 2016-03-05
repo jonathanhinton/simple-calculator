@@ -8,7 +8,7 @@ namespace Calculator
 {
     class Modulo
     {
-        public int equation(int lhs, int rhs)
+        public int moduloIt(int lhs, int rhs)
         {
             return lhs % rhs;
         }

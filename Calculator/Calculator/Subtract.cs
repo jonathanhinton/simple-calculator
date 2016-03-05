@@ -8,7 +8,7 @@ namespace Calculator
 {
     class Subtract
     {
-        public int equation(int lhs, int rhs)
+        public int subtractIt(int lhs, int rhs)
         {
             return lhs - rhs;
         }

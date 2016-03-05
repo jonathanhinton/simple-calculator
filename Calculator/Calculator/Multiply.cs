@@ -8,7 +8,7 @@ namespace Calculator
 {
     class Multiply
     {
-        public int equation(int lhs, int rhs)
+        public int multiplyIt(int lhs, int rhs)
         {
             return lhs * rhs;
         }
