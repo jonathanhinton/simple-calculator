@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Calculator
 {
-    class Subtract
+    public class Subtract
     {
         public int subtractIt(int lhs, int rhs)
         {

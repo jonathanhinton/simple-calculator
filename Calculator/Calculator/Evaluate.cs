@@ -18,7 +18,7 @@ namespace Calculator
         //Allow the instance of stack_record to be set by methods within Evaluate class
         public Stack stack_record { get; set; }
 
-        //The Mother Function
+        //THE MOTHER FUNCTION
         public int handledIt(string input)
         {
             //declare variable to hold result from operation
@@ -72,6 +72,28 @@ namespace Calculator
             //set stack_record result for later access
             stack_record.last = result;
             return result;
+        }
+        public string LastInput(string input)
+        {
+            string lastCommand = "";
+            string user_command = input.ToLower();
+            if (user_command == "lastq")
+            {
+                lastCommand = stack_record.lastQ;
+            }
+
+            return lastCommand;
+        }
+
+        public int LastOutput(string input)
+        {
+            int lastResult = 0;
+            string user_command = input.ToLower();
+            if (user_command == "last")
+            {
+                lastResult = stack_record.last;
+            }
+            return lastResult;
         }
     }
 }

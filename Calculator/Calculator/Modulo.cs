@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Calculator
 {
-    class Modulo
+    public class Modulo
     {
         public int moduloIt(int lhs, int rhs)
         {

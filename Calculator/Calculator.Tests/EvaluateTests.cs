@@ -123,5 +123,20 @@ namespace Calculator.Tests
             Assert.AreEqual(expected, actual);
         }
 
+        [TestMethod]
+        public void LastInputTest()
+        {
+            //Arrange
+            Evaluate evaluation = new Evaluate();
+
+            //Act
+            int eval = evaluation.handledIt("234 +432");
+            string expected = "234 +432";
+            string actual = evaluation.LastInput("lAsTq");
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+
     }
 }
