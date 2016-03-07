@@ -84,8 +84,14 @@ namespace Calculator
             {
                 lastCommand = stack_record.lastQ;
             }
-
+            else
+            {
+                lastCommand = "bad command bro";
+                Console.WriteLine(lastCommand);
+                throw new InvalidOperationException("command not recognized, please type 'last' or 'lastq'.");
+            }
             return lastCommand;
+
         }
 
         //Create method to recall last result
@@ -97,6 +103,11 @@ namespace Calculator
             if (user_command == "last")
             {
                 lastResult = stack_record.last;
+            }
+            else
+            {
+                lastResult = 1010101010;
+                throw new InvalidOperationException("command not recognized, please type 'last' or 'lastq'.");
             }
             return lastResult;
         }

@@ -138,5 +138,37 @@ namespace Calculator.Tests
             Assert.AreEqual(expected, actual);
         }
 
+        [TestMethod]
+        [ExpectedException(typeof(InvalidOperationException))]
+        public void BadLastQInputTest()
+        {
+            //Arrange
+            Evaluate evaluation = new Evaluate();
+
+            //Act
+            int eval = evaluation.handledIt("234 +432");
+            string expected = "234 +432";
+            string actual = evaluation.LastInput("Bumb bum bum bum");
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(InvalidOperationException))]
+        public void BadLastInputTest()
+        {
+            //Arrange
+            Evaluate evaluation = new Evaluate();
+
+            //Act
+            int eval = evaluation.handledIt("234 +432");
+            string expected = "234 +432";
+            int actual = evaluation.LastOutput("Bow chicka wow wow");
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+
     }
 }
