@@ -32,8 +32,8 @@ namespace Calculator
             {
                 throw new InvalidOperationException("Constants can only be one character in Length");
             }
-            char cons;
-            return '=';
+            char cons = 'a';
+            return cons;
         }
     }
 }
