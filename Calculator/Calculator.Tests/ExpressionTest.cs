@@ -37,7 +37,7 @@ namespace Calculator.Tests
         {
             //Arrange
             Expression myExp = new Expression();
-            Container fullExpression = myExp.ParseExpression("2+3");
+            Container fullExpression = myExp.ParseExpression("2 + 3");
             
             //Act
             int actual = fullExpression.LHS;
@@ -72,6 +72,21 @@ namespace Calculator.Tests
             char actual = fullExpression.OP;
             char expected = '*';
             
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void CanParseIdentityOperator()
+        {
+            //Arrange
+            Expression myExp = new Expression();
+            Container fullExpression = myExp.ParseExpression("x = 234");
+
+            //Act
+            char actual = fullExpression.OP;
+            char expected = '=';
+
             //Assert
             Assert.AreEqual(expected, actual);
         }
@@ -162,6 +177,20 @@ namespace Calculator.Tests
             //Act
             int actual = fullExpression.modulo_me();
             int expected = 1;
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+        [TestMethod]
+        public void CanAssignConstant()
+        {
+            //Arrange
+            Expression myExp = new Expression();
+            Container fullExpression = myExp.ParseExpression("X = 4");
+
+            //Act
+            string actual = fullExpression.CONS;
+            string expected = "x";
 
             //Assert
             Assert.AreEqual(expected, actual);

@@ -12,6 +12,7 @@ namespace Calculator
         public int LHS { get; set; }
         public int RHS { get; set; }
         public char OP { get; set; }
+        public string CONS { get; set; }
 
         //This block is not doing any of the work, first test of doing math operations using methods instead of classes. Perfectly valid though.
         public int add_me()

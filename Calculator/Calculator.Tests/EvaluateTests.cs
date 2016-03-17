@@ -169,6 +169,34 @@ namespace Calculator.Tests
             //Assert
             Assert.AreEqual(expected, actual);
         }
+        [TestMethod]
+        public void AddConstantToDictionary()
+        {
+            //Arrange
+            Evaluate evaluation = new Evaluate();
+
+            //Act
+            int actual = evaluation.handledIt("x = 3");
+            int expected = 3;
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void RetrieveConstantFromDictionary()
+        {
+            //Arrange
+            Evaluate evaluation = new Evaluate();
+
+            evaluation.handledIt("x = 3");
+            //Act
+            int actual = evaluation.conts["x"];
+            int expected = 3;
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
 
     }
 }

@@ -13,11 +13,12 @@ namespace Calculator
         {
             //create new instance of Stack class so that it is not null when getting and setting.
             stack_record = new Stack();
+            conts = new Dictionary<string, int>();
         }
 
         //Allow the instance of stack_record to be set by methods within Evaluate class
         public Stack stack_record { get; set; }
-
+        public Dictionary<string, int> conts { get; set; }
         //THE MOTHER FUNCTION
         public int handledIt(string input)
         {
@@ -37,6 +38,7 @@ namespace Calculator
             int lhs = answer.LHS;
             int rhs = answer.RHS;
             char op = answer.OP;
+            string constant = answer.CONS;
 
             //run the operator logic
             if (op == '+')
@@ -63,8 +65,12 @@ namespace Calculator
             {
                 Modulo modulo_me = new Modulo();
                 result = modulo_me.moduloIt(lhs, rhs);
-            }
-            else
+            } 
+            else if (op == '=')
+            {
+                conts.Add(constant, rhs);
+                result = rhs; 
+            }  else
             {
                 throw new InvalidOperationException("no valid operator found");
             }
@@ -87,7 +93,6 @@ namespace Calculator
             else
             {
                 lastCommand = "bad command bro";
-                Console.WriteLine(lastCommand);
                 throw new InvalidOperationException("command not recognized, please type 'last' or 'lastq'.");
             }
             return lastCommand;
