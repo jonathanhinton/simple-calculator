@@ -196,5 +196,19 @@ namespace Calculator.Tests
             Assert.AreEqual(expected, actual);
         }
 
+        [TestMethod]
+        public void CanUseConstantInEquation()
+        {
+            //Arrange
+            Expression myExp = new Expression();
+            Evaluate my_eval = new Evaluate();
+            Container fullExpression = myExp.ParseExpression("x = 4");
+            int actual = my_eval.handledIt("x + 3");
+            int expected = 7;
+
+            Assert.AreEqual(expected, actual);
+
+        }
+
     }
 }

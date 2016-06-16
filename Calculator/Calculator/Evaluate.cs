@@ -8,6 +8,10 @@ namespace Calculator
 {
     public class Evaluate
     {
+        //Allow the instance of stack_record to be set by methods within Evaluate class
+        public Stack stack_record { get; set; }
+        public Dictionary<string, int> conts { get; set; }
+        
         //construct Evaluate when it is called
         public Evaluate()
         {
@@ -16,9 +20,6 @@ namespace Calculator
             conts = new Dictionary<string, int>();
         }
 
-        //Allow the instance of stack_record to be set by methods within Evaluate class
-        public Stack stack_record { get; set; }
-        public Dictionary<string, int> conts { get; set; }
         //THE MOTHER FUNCTION
         public int handledIt(string input)
         {
@@ -27,12 +28,28 @@ namespace Calculator
 
             //set stack_record so that I can access the last user input
             stack_record.lastQ = input;
-
+            
             //create new expression class to handle parsing user input
             Expression myExp = new Expression();
-
+            
             //allow the container to be set from the parseExpression method
             Container answer = myExp.ParseExpression(input);
+
+            //search the equation for a constant and parse it out to do the math on.
+            string ContString = "abcdefghijklmnopqrstuvwxyz";
+
+            foreach(var letter in input)
+            {
+                if (ContString.IndexOf(letter) == 0)
+                {
+                    Console.WriteLine("No Constant Defined");
+                }
+                else
+                {
+
+                }
+            }
+
 
             //shorthand the variables from Container class
             int lhs = answer.LHS;

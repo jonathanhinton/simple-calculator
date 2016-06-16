@@ -29,7 +29,13 @@ namespace Calculator
                 {
                     user_term.Counter++;
                     Console.WriteLine(user_term.PromptFormat() + " Your last question was {0}", my_eval.LastInput(user_input));
-                } else
+                }
+                /*this section will detect for assignment operator and display result properly.
+                else if(user_input.Contains("="))
+                {
+                    user_term.Counter++;
+                    Console.WriteLine(user_term.PromptFormat() + " ")
+                } */ else
                 {
                     user_term.Counter++;
                     Console.WriteLine(user_term.PromptFormat() + " the answer is {0}...I think", my_eval.handledIt(user_input));

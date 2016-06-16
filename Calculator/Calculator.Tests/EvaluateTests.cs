@@ -176,8 +176,8 @@ namespace Calculator.Tests
             Evaluate evaluation = new Evaluate();
 
             //Act
-            int actual = evaluation.handledIt("x = 3");
             int expected = 3;
+            int actual = evaluation.handledIt("x = 3");
 
             //Assert
             Assert.AreEqual(expected, actual);
@@ -191,8 +191,8 @@ namespace Calculator.Tests
 
             evaluation.handledIt("x = 3");
             //Act
-            int actual = evaluation.conts["x"];
             int expected = 3;
+            int actual = evaluation.conts["x"];
 
             //Assert
             Assert.AreEqual(expected, actual);
